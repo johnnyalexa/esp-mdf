@@ -361,7 +361,9 @@ static int coredump_func(int argc, char **argv)
         for (int offset = 4; offset < coredump_size; offset += COREDUMP_BUFFER_SIZE) {
             size_t size = MIN(COREDUMP_BUFFER_SIZE, coredump_size - offset);
             esp_partition_read(coredump_part, offset, buffer, size);
-            uint8_t *b64_buf = base64_encode(buffer, size, NULL);
+            //uint8_t *b64_buf = base64_encode(buffer, size, NULL);
+            uint8_t *b64_buf = MDF_CALLOC(1, size * 2);
+            mbedtls_base64_encode(b64_buf, size * 2, NULL, buffer, size);
             printf("%s", b64_buf);
             MDF_FREE(b64_buf);
         }
