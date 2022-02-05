@@ -15,7 +15,7 @@
 #include "iot_lcd.h"
 #include "iot_wifi_conn.h"
 #include "nvs_flash.h"
-#include "esp_event_loop.h"
+#include "esp_event.h"
 #include "freertos/event_groups.h"
 #include "lcd_image.h"
 
