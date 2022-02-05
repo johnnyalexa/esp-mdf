@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "rom/rtc.h"
+#include "esp32/rom/rtc.h"
 
 #include "mupgrade.h"
 
